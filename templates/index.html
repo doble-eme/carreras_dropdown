@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Predicción Posibilidades de Ingreso UDG</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+
+  <body>
+    <div>
+	    <h1>Predicción de Posibilidades de Ingreso a la UDG</h1>
+        {% for carrera in carreras %}
+            <h2>
+                <b>Centro: </b>{{ carrera.CENTRO }}<p>
+                Calendario: {{ carrera.CALENDARIO }}
+            </h2>
+            <p>
+                <b>Carrera</b>: {{ carrera.CARRERA }}
+            </p>
+            <p>
+                <b>Aspirantes</b>: {{ carrera.ASPIRANTES }}
+            </p>
+            <p>
+                <b>Admitidos</b>: {{ carrera.ADMITIDOS }}
+            </p>
+            <p>
+                <b>CUPO</b>: {{ carrera.CUPO }}
+            </p>
+            <p>
+                <b>Puntaje mínimo</b>: {{ carrera.PUNTAJE_MINIMO }}
+            </p>
+            {% endfor %}
+    </div>
+  </body>
+</html>
