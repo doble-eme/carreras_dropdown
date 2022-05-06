@@ -11,11 +11,28 @@
   </head>
 
   <body>
-    <div>
-	    <h1>Predicción de Posibilidades de Ingreso a la UDG</h1>
-        {% for carrera in carreras %}
-            {{ carrera }}
-        {% endfor %}
-    </div>
+    <h1>Predicción de Posibilidades de Ingreso a la UDG</h1>
+    <form class="form-inline" method="POST" action="{{ url_for('select_value') }}">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">Selecciona la carrera de interés (CALENDARIO - CENTRO - CARRERA)</span>
+                    <select name="seleccion_carrera" class="selectpicker form-control">
+                        {% for carrera in carreras %}
+                        <option value = "{{ carrera.CALENDARIO }},
+                                         {{ carrera.PUNTAJE_MINIMO }},
+                                         {{ carrera.CUPO }},
+                                         {{ carrera.ADMITIDOS }},
+                                         {{ carrera.ASPIRANTES }}"
+                                         SELECTED>
+                                         {{ carrera.CALENDARIO }} -
+                                         {{ carrera.CENTRO }} -
+                                         {{ carrera.CARRERA }}
+                        </option>
+                        {% endfor %}
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-default">Go</button>
+        </div>
+    </form>
   </body>
 </html>
