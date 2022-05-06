@@ -31,9 +31,12 @@
                         {% endfor %}
                     </select>
             </div>
-            <button type="submit" class="btn btn-default">Go</button>
+            <button type="submit" class="btn btn-default">Obtener predicción</button>
         </div>
     </form>
     {{ prediction_text }}
+    <form method="POST" action="/">
+        <button type="submit" class="btn btn-default">Obtener nueva predicción</button>
+    </form>
   </body>
 </html>
